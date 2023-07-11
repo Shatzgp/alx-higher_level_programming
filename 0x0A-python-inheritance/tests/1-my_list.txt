@@ -1,0 +1,77 @@
+The ``MyList`` module
+===============================================================================
+
+Using ``print_sorted``
+-------------------------------------------------------------------------------
+
+
+Import `print_sorted` from `1-my_list`
+
+    >>> MyList = __import__('1-my_list').MyList
+
+It should create successfully an instance of MyList
+
+    >>> lst = MyList()
+    >>> isinstance(lst, MyList)
+    True
+
+It should create successfully the right type MyList
+
+    >>> lst = MyList()
+    >>> type(lst) ==  MyList
+    True
+
+It should appear the print_sorted in the instance method
+
+    >>> type(MyList.__dict__['print_sorted'])
+    <class 'function'>
+
+It should beave normally
+
+    >>> lst = MyList()
+    >>> lst.print_sorted()
+    []
+
+It should append a value to the lst
+
+    >>> lst = MyList()
+    >>> lst.append(1)
+
+it should print the right form
+
+    >>> lst = MyList()
+    >>> lst.append(4)
+    >>> lst.append(3)
+    >>> lst.append(1)
+    >>> lst.append(5)
+    >>> lst.append(2)
+    >>> lst.print_sorted()
+    [1, 2, 3, 4, 5]
+
+it should conserve the original list
+
+    >>> lst = MyList()
+    >>> lst.append(4)
+    >>> lst.append(3)
+    >>> lst.append(1)
+    >>> lst.append(5)
+    >>> lst.append(2)
+    >>> lst.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(lst)
+    [4, 3, 1, 5, 2]
+
+It should return the same when is ordered
+
+    >>> lst = MyList([-1, 0, 1, 3, 1999])
+    >>> lst.print_sorted()
+    [-1, 0, 1, 3, 1999]
+
+It should return the same when is ordered
+
+    >>> lst = MyList([2000, -1986, 1987, -1, 3, 1999])
+    >>> l = lst
+    >>> lst.print_sorted()
+    [-1986, -1, 3, 1987, 1999, 2000]
+    >>> l is lst
+    True
